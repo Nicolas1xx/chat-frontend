@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GramatXplorer | Astrolino Chat</title>
+  <meta name="description" content="Converse com Astrolino, seu copiloto cósmico da gramática!" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Markdown -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <!-- Fonte cósmica/lúdica -->
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Fredoka', cursive;
+    }
+
+    #chat-area {
+      scrollbar-gutter: stable both;
+    }
+
+    .chat-message p, .chat-message ul, .chat-message ol {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Scroll suave */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body class="flex flex-col min-h-screen bg-gradient-to-b from-gray-900 to-purple-800 text-white relative">
+
+  <!-- Header -->
+  <header class="flex flex-wrap items-center justify-between px-6 py-4 bg-black/30 backdrop-blur-sm shadow-xl z-20">
+    <h1 class="text-3xl font-extrabold text-purple-300 tracking-wider flex items-center gap-2">
+      🌌 GramatXplorer
+    </h1>
+    <nav class="mt-2 sm:mt-0 flex space-x-4 text-sm sm:text-base" aria-label="Navegação Principal">
+      <a href="#" class="hover:text-purple-400 transition-colors">Início</a>
+      <a href="#" class="hover:text-purple-400 transition-colors">Lições</a>
+      <a href="#" class="text-purple-400 font-semibold underline underline-offset-4">Exercícios</a>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main class="flex flex-col flex-1 px-6 py-8">
+    <h2 class="text-center text-3xl md:text-4xl font-extrabold mb-6">
+      Astrolino responde! ✨
+    </h2>
+
+    <div id="chat-area" class="flex-1 overflow-y-auto max-w-4xl mx-auto w-full space-y-6 pb-40" role="log" aria-live="polite">
+      <!-- Mensagem do Astrolino -->
+      <div class="flex justify-start items-start space-x-3 sm:space-x-4">
+        <div class="w-10 h-10 flex-shrink-0 rounded-full overflow-hidden" title="Avatar do Astrolino">
+          <img src="../chat-frontend/static/img/logodorobo.png" 
+               alt="Avatar do Robô Astrolino" 
+               class="w-full h-full object-cover">
+        </div>
+        <div class="bg-indigo-700/60 p-4 rounded-tl-none rounded-2xl text-sm chat-message max-w-lg break-words shadow-lg">
+          <p>
+            Saudações estelares, <strong>explorador do saber</strong>! Eu sou o Astrolino, seu copiloto cósmico da gramática! Como posso clarear seu entendimento hoje? 🪐
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer / Chat input -->
+  <footer class="fixed bottom-0 left-0 w-full flex justify-center z-30 px-6 bg-gradient-to-t from-gray-900 via-gray-900/90 to-transparent pt-4 pb-4 sm:pb-6">
+    <form id="chat-form" class="relative w-full max-w-4xl flex gap-3" onsubmit="return false;">
+      <div class="relative flex-1 group">
+        <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 group-focus-within:text-purple-300 transition-colors pointer-events-none"
+             viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.43 12.96 13 14 13 14h-2v-.5c0-1.1.45-2.11 1.19-2.83l.89-.9c.77-.77 1.2-1.8 1.2-2.87 0-2.21-1.79-4-4-4s-4 1.79-4 4H5c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.94-.92 3.6-2.39 4.63z" fill="currentColor"/>
+        </svg>
+        <label for="mensagem-input" class="sr-only">Digite sua pergunta sobre gramática</label>
+        <input type="text" id="mensagem-input"
+               class="w-full rounded-full bg-white/95 text-gray-900 font-medium pl-12 pr-4 py-3 sm:py-4 shadow-2xl outline-none focus:ring-4 focus:ring-purple-400 focus:ring-opacity-50 placeholder:text-gray-500 transition-all duration-200"
+               placeholder="Pergunte sobre crase, concordância, regência..."
+               autocomplete="off"
+               aria-label="Campo de entrada para a mensagem" />
+      </div>
+      <button type="submit" id="enviar-btn"
+              class="flex items-center justify-center w-auto px-5 sm:px-6 py-3 sm:py-4 rounded-full bg-purple-600 text-white font-bold shadow-xl hover:bg-purple-500 active:scale-[0.98] transition-all duration-150 whitespace-nowrap"
+              aria-label="Enviar mensagem">
+        <span class="hidden sm:inline">Enviar</span>
+        <span class="sm:hidden text-xl leading-none">🚀</span>
+      </button>
+    </form>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
