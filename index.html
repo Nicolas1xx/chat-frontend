@@ -17,14 +17,16 @@
 
   <style>
     body {
-      font-family: cursive;
+      font-family: "Fredoka", cursive;
     }
 
     #chat-area {
       scrollbar-gutter: stable both;
     }
 
-    .chat-message p, .chat-message ul, .chat-message ol {
+    .chat-message p,
+    .chat-message ul,
+    .chat-message ol {
       margin-bottom: 0.5rem;
     }
 
@@ -38,7 +40,7 @@
 
   <!-- Header -->
   <header class="flex flex-wrap items-center justify-between px-6 py-4 bg-black/30 backdrop-blur-sm shadow-xl z-20">
-    <h1 class="text-3xl font-extrabold text-purple-300 tracking-wider flex items-center gap-2">
+    <h1 class="text-3xl font-extrabold text-white tracking-wider flex items-center gap-2">
       🌌 GramaticXplorer
     </h1>
     <nav class="mt-2 sm:mt-0 flex space-x-4 text-sm sm:text-base" aria-label="Navegação Principal">
@@ -78,15 +80,21 @@
           <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.43 12.96 13 14 13 14h-2v-.5c0-1.1.45-2.11 1.19-2.83l.89-.9c.77-.77 1.2-1.8 1.2-2.87 0-2.21-1.79-4-4-4s-4 1.79-4 4H5c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.94-.92 3.6-2.39 4.63z" fill="currentColor"/>
         </svg>
         <label for="mensagem-input" class="sr-only">Digite sua pergunta sobre gramática</label>
-        <input type="text" id="mensagem-input"
-               class="w-full rounded-full bg-white/95 text-gray-900 font-medium pl-12 pr-4 py-3 sm:py-4 shadow-2xl outline-none focus:ring-4 focus:ring-purple-400 focus:ring-opacity-50 placeholder:text-gray-500 transition-all duration-200"
-               placeholder="Pergunte sobre crase, concordância, regência..."
-               autocomplete="off"
-               aria-label="Campo de entrada para a mensagem" />
+        <input
+          type="text"
+          id="mensagem-input"
+          class="w-full rounded-full bg-white/95 text-gray-900 font-medium pl-12 pr-4 py-3 sm:py-4 shadow-2xl outline-none focus:ring-4 focus:ring-purple-400 focus:ring-opacity-50 placeholder:text-gray-500 transition-all duration-200"
+          placeholder="Pergunte sobre crase, concordância, regência..."
+          autocomplete="off"
+          aria-label="Campo de entrada para a mensagem"
+        />
       </div>
-      <button type="submit" id="enviar-btn"
-              class="flex items-center justify-center w-auto px-5 sm:px-6 py-3 sm:py-4 rounded-full bg-purple-600 text-white font-bold shadow-xl hover:bg-purple-500 active:scale-[0.98] transition-all duration-150 whitespace-nowrap"
-              aria-label="Enviar mensagem">
+      <button
+        type="submit"
+        id="enviar-btn"
+        class="flex items-center justify-center w-auto px-5 sm:px-6 py-3 sm:py-4 rounded-full bg-purple-600 text-white font-bold shadow-xl hover:bg-purple-500 active:scale-[0.98] transition-all duration-150 whitespace-nowrap"
+        aria-label="Enviar mensagem"
+      >
         <span class="hidden sm:inline">Enviar</span>
         <span class="sm:hidden text-xl leading-none">🚀</span>
       </button>
