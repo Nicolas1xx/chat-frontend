@@ -12,7 +12,7 @@
   <!-- Markdown -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
-  <!-- Fonte lúdica -->
+  <!-- Fonte -->
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet" />
 
   <style>
@@ -36,17 +36,21 @@
   </style>
 </head>
 
-<body class="flex flex-col min-h-screen bg-gradient-to-b from-gray-900 to-purple-800 text-white relative">
+<body class="bg-gradient-to-b from-blue-900 to-purple-800 text-white min-h-screen font-[cursive] flex flex-col relative">
 
   <!-- Header -->
-  <header class="flex flex-wrap items-center justify-between px-6 py-4 bg-black/30 backdrop-blur-sm shadow-xl z-20">
-    <h1 class="text-3xl font-extrabold text-white tracking-wider flex items-center gap-2">
-      🌌 GramaticXplorer
-    </h1>
-    <nav class="mt-2 sm:mt-0 flex space-x-4 text-sm sm:text-base" aria-label="Navegação Principal">
-      <a href="#" class="hover:text-purple-400 transition-colors">Início</a>
-      <a href="#" class="hover:text-purple-400 transition-colors">Lições</a>
-      <a href="#" class="text-purple-400 font-semibold underline underline-offset-4">Exercícios</a>
+  <header class="flex w-full justify-between px-10 py-6 bg-transparent relative z-10">
+    <h1 class="text-4xl font-bold">🌌 GramaticXplorer</h1>
+    <nav class="flex items-center space-x-6 text-lg">
+      <a href="#" class="hover:underline text-white">Início</a>
+      <a href="#" class="hover:underline text-white">Lições</a>
+      <a href="#" class="underline font-semibold text-white">Exercícios</a>
+      <a href="perfil.html" class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-white/30 cursor-pointer transition duration-200">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M5.121 17.804A4 4 0 0112 15a4 4 0 016.879 2.804M12 11a4 4 0 100-8 4 4 0 000 8z"/>
+        </svg>
+      </a>
     </nav>
   </header>
 
@@ -62,7 +66,7 @@
         <div class="w-10 h-10 flex-shrink-0 rounded-full overflow-hidden" title="Avatar do Astrolino">
           <img src="./static/astro.png" alt="Avatar do Robô Astrolino" class="w-full h-full object-cover">
         </div>
-        <div class="bg-indigo-700 bg-opacity-60 p-4 rounded-tl-none rounded-2xl text-sm chat-message max-w-lg break-words shadow-lg">
+        <div class="bg-white/20 backdrop-blur-sm p-4 rounded-tl-none rounded-2xl text-sm chat-message max-w-lg break-words shadow-lg">
           <p>
             Saudações estelares, <strong>explorador do saber</strong>! Eu sou o Astrolino, seu copiloto cósmico da gramática! Como posso clarear seu entendimento hoje? 🪐
           </p>
@@ -72,12 +76,19 @@
   </main>
 
   <!-- Footer -->
-  <footer class="fixed bottom-0 left-0 w-full flex justify-center z-30 px-6 bg-gradient-to-t from-gray-900 via-gray-900/90 to-transparent pt-4 pb-4 sm:pb-6">
+  <footer class="fixed bottom-0 left-0 w-full flex justify-center z-30 px-6 bg-gradient-to-t from-blue-900 via-blue-900/80 to-transparent pt-4 pb-4 sm:pb-6">
     <form id="chat-form" class="relative w-full max-w-4xl flex gap-3">
       <div class="relative flex-1 group">
-        <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 group-focus-within:text-purple-300 transition-colors pointer-events-none"
+        <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-300 group-focus-within:text-purple-200 transition-colors pointer-events-none"
              viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.43 12.96 13 14 13 14h-2v-.5c0-1.1.45-2.11 1.19-2.83l.89-.9c.77-.77 1.2-1.8 1.2-2.87 0-2.21-1.79-4-4-4s-4 1.79-4 4H5c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.94-.92 3.6-2.39 4.63z" fill="currentColor"/>
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10
+          10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.43 12.96
+          13 14 13 14h-2v-.5c0-1.1.45-2.11
+          1.19-2.83l.89-.9c.77-.77 1.2-1.8
+          1.2-2.87 0-2.21-1.79-4-4-4s-4
+          1.79-4 4H5c0-3.86 3.14-7
+          7-7s7 3.14 7 7c0 1.94-.92
+          3.6-2.39 4.63z" fill="currentColor"/>
         </svg>
         <label for="mensagem-input" class="sr-only">Digite sua pergunta sobre gramática</label>
         <input
